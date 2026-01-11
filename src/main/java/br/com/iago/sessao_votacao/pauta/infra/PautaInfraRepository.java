@@ -1,0 +1,23 @@
+package br.com.iago.sessao_votacao.pauta.infra;
+
+import br.com.iago.sessao_votacao.pauta.application.service.PautaRepository;
+import br.com.iago.sessao_votacao.pauta.domain.Pauta;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.antlr.v4.runtime.misc.LogManager;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Log4j2
+@RequiredArgsConstructor
+public class PautaInfraRepository implements PautaRepository {
+    private final PautaSpringDataJPARepository pautaSpringDataJPARepository;
+
+    @Override
+    public Pauta salva(Pauta pauta) {
+        log.info("[inicia] PautaInfraRepository - salva");
+        pautaSpringDataJPARepository.save(pauta);
+        log.info("[finaliza] PautaInfraRepository - salva");
+        return pauta;
+    }
+}

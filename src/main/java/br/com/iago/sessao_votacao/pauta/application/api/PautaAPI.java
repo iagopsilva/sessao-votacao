@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 //Endereço ou rota que o usuário ou sistema deve digitar para acessar
 // os métodos daquela classe
 @RequestMapping("/pauta")
+//API é o que faz o meio do caminho entre duas partes (O cliente e o
+//servidor)
 public interface PautaAPI {
     //nova instância de entidade criada (código 201)
     @ResponseStatus(HttpStatus.CREATED)

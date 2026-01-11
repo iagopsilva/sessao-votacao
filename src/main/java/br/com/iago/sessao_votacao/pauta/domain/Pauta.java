@@ -1,5 +1,6 @@
 package br.com.iago.sessao_votacao.pauta.domain;
 
+import br.com.iago.sessao_votacao.pauta.application.api.NovaPautaRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
@@ -29,4 +30,11 @@ public class Pauta {
     private String descricao;
     private UUID idAssociadoAutor;
     private LocalDateTime dataCriacao;
+
+    public Pauta(NovaPautaRequest novaPauta) {
+        this.titulo = novaPauta.getTitulo();
+        this.descricao = novaPauta.getDescricao();
+        this.idAssociadoAutor = novaPauta.getIdAssociadoAutor();
+        this.dataCriacao = LocalDateTime.now();
+    }
 }
