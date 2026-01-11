@@ -2,7 +2,9 @@ package br.com.iago.sessao_votacao.pauta.domain;
 
 import br.com.iago.sessao_votacao.pauta.application.api.NovaPautaRequest;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
@@ -19,6 +21,7 @@ que imprime o nome da classe e o valor de cada um dos seus atributos */
 //Quer dizer que essa classe representa uma tabela no meu BD
 //Cada instância desse objeto representa uma linha (registro) no meu BD
 @Entity
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Pauta {
     //UUID -> garante de o id seja único, string de 36 caracteres (32 hexadecimais e 4 hifens)
     //exemplo: 550e8400-e29b-41d4-a716-446655440000
